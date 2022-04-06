@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "380347868766",
+    "project_id": "newparq-475c8",
+    "storage_bucket": "newparq-475c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:380347868766:android:428f4ec5e9cbb5e22ff6cf",
+        "android_client_info": {
+          "package_name": "com.example.newparq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "380347868766-qebaqr9pdcmi14i87j1qg1ltrt9sp1nh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.newparq",
+            "certificate_hash": "7596fc027688e499cc2b8e8edc5ab9403b7c31cb"
+          }
+        },
+        {
+          "client_id": "380347868766-1rl81023otf7d15lqo3ooa0q5rn8tdq7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnVKyC33sdD5jOudgVQV5XlNz6oyOKeHQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "380347868766-1rl81023otf7d15lqo3ooa0q5rn8tdq7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

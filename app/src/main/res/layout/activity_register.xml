@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_700"
+    tools:context=".RegisterActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:paddingTop="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="serif-monospace"
+        android:text="Sign Up"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/fnames"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round"
+        android:hint="@string/full_names"
+        android:inputType="textPersonName"
+        android:textColor="@color/purple_700" />
+
+    <EditText
+        android:id="@+id/pnumber"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        android:textColor="@color/purple_700" />
+
+
+    <EditText
+        android:id="@+id/idno"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round"
+        android:hint="National Identity Number"
+        android:inputType="number"
+        android:textColor="@color/purple_700" />
+
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round"
+        android:hint="@string/emaiil"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/purple_700" />
+
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round"
+        android:hint="@string/passwordd"
+        android:inputType="textPassword"
+        android:textColor="@color/purple_700" />
+
+    <EditText
+        android:id="@+id/conpass"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:textColor="@color/purple_700" />
+
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button"
+            android:text="@string/create_account"
+            android:textColor="@color/color_primary" />
+
+
+    </LinearLayout>
+    </ScrollView>
+    <ImageView
+        android:id="@+id/back_to_login"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-15dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/backk" />
+</RelativeLayout>
+

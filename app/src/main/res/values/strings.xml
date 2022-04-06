@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Newparq</string>
+    <string name="password">password</string>
+    <string name="email">Email</string>
+    <string name="create_account">Create Account</string>
+    <string name="passwordd">Password</string>
+    <string name="emaiil">Email</string>
+    <string name="full_names">Full Names</string>
+</resources>
