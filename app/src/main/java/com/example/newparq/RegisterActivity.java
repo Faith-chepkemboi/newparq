@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +19,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthEmailException;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,6 +34,9 @@ public class RegisterActivity extends AppCompatActivity {
 
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://newparq-475c8-default-rtdb.firebaseio.com/");
     ProgressBar progressBar;
+    EditText password;
+    EditText email;
+    private static final String TAG ="RegisterActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -169,7 +177,7 @@ public class RegisterActivity extends AppCompatActivity {
                 new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Toast.makeText(RegisterActivity.this, "Registration Succesful", Toast.LENGTH_SHORT).show();
 //         the user verification code
                             FirebaseUser firebaseUser = auth.getCurrentUser();
@@ -177,17 +185,34 @@ public class RegisterActivity extends AppCompatActivity {
                             firebaseUser.sendEmailVerification();
 
 //                            opening user profile
-                            Intent intent = new Intent(RegisterActivity.this,UserProfileActivity.class);
+                            Intent intent = new Intent(RegisterActivity.this, UserProfileActivity.class);
                             //to prevent user from returining to register activity on pressing back button after registration
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
                             finish();      //closes the register activity
 
 
+                        } else {
+                            try {
+                                throw task.getException();
+                            } catch (FirebaseAuthWeakPasswordException e) {
+                                password.setError("weak password");
+                                password.requestFocus();
+                            } catch (FirebaseAuthInvalidCredentialsException e) {
+                                password.setError("Email already used or invalid.kindly re_enter");
+                                password.requestFocus();
+                            } catch (FirebaseAuthUserCollisionException e) {
+                                password.setError("user already registered with this email.use another email");
+                                password.requestFocus();
+
+                            } catch (Exception e) {
+                                Log.e(TAG, e.getMessage());
+                                Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                progressBar.setVisibility(View.GONE);
+                            }
                         }
-
-
                     }
+
                 });
 
 

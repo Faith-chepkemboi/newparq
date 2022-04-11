@@ -15,112 +15,111 @@
         android:layout_centerInParent="true"
         android:paddingTop="10dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:fontFamily="serif-monospace"
-        android:text="Sign Up"
-        android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="serif-monospace"
+                android:text="Sign Up"
+                android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/fnames"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/round"
-        android:hint="@string/full_names"
-        android:inputType="textPersonName"
-        android:textColor="@color/purple_700" />
+            <EditText
+                android:id="@+id/fnames"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round"
+                android:hint="@string/full_names"
+                android:inputType="textPersonName"
+                android:textColor="@color/purple_700" />
 
-    <EditText
-        android:id="@+id/pnumber"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/round"
-        android:hint="Phone Number"
-        android:inputType="phone"
-        android:textColor="@color/purple_700" />
-
-
-    <EditText
-        android:id="@+id/idno"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/round"
-        android:hint="National Identity Number"
-        android:inputType="number"
-        android:textColor="@color/purple_700" />
+            <EditText
+                android:id="@+id/pnumber"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:textColor="@color/purple_700" />
 
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/round"
-        android:hint="@string/emaiil"
-        android:inputType="textEmailAddress"
-        android:textColor="@color/purple_700" />
+            <EditText
+                android:id="@+id/idno"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round"
+                android:hint="National Identity Number"
+                android:inputType="number"
+                android:textColor="@color/purple_700" />
 
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/round"
-        android:hint="@string/passwordd"
-        android:inputType="textPassword"
-        android:textColor="@color/purple_700" />
-
-    <EditText
-        android:id="@+id/conpass"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/round"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        android:textColor="@color/purple_700" />
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round"
+                android:hint="@string/emaiil"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/purple_700" />
 
 
-        <Button
-            android:id="@+id/register"
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/button"
-            android:text="@string/create_account"
-            android:textColor="@color/color_primary" />
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round"
+                android:hint="@string/passwordd"
+                android:inputType="textPassword"
+                android:textColor="@color/purple_700" />
 
-        <ProgressBar
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/progress"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:elevation="10dp"
-            android:visibility="gone"/>
+            <EditText
+                android:id="@+id/conpass"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:textColor="@color/purple_700" />
 
 
+            <Button
+                android:id="@+id/register"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button"
+                android:text="@string/create_account"
+                android:textColor="@color/color_primary" />
 
-    </LinearLayout>
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:elevation="10dp"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
     </ScrollView>
 
     <ImageView
