@@ -40,13 +40,13 @@
 
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/phone"
             android:layout_width="300dp"
             android:layout_height="40dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="150dp"
             android:background="@drawable/round"
-            android:hint="@string/email"
+            android:hint="Mobile Number"
             android:inputType="textEmailAddress"
             android:textColor="@color/purple_700" />
 

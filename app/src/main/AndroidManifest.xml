@@ -12,11 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Newparq">
         <activity
+            android:name=".UserProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
-            android:exported="false" ></activity>
+            android:exported="false" />
         <activity
             android:name=".ForgotPassActivity"
-            android:exported="false" ></activity>
+            android:exported="false" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
@@ -28,8 +31,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
     </application>
 
