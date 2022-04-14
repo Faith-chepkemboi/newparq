@@ -271,6 +271,21 @@ private static final String TAG = "LoginActivity";
         alertDialog.show();
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (authProfile.getCurrentUser() != null) {
+            Toast.makeText(this, "Already logged in", Toast.LENGTH_SHORT).show();
+
+            //start the userprofileActivity
+            startActivity(new Intent(LoginActivity.this,UserProfileActivity.class));
+            finish(); //close login activity
+        }
+        else{
+            Toast.makeText(this, "You can login now", Toast.LENGTH_SHORT).show();
+        }
+    }
 }
 
 

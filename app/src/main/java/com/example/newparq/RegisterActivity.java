@@ -231,7 +231,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 //                                     opening user profile
-                                               Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                               Intent intent = new Intent(RegisterActivity.this, UserProfileActivity.class);
                             //to prevent user from returining to register activity on pressing back button after registration
                                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK
                                                     | Intent.FLAG_ACTIVITY_NEW_TASK);
