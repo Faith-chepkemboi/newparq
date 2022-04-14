@@ -3,13 +3,17 @@ package com.example.newparq;
 import static java.util.regex.Pattern.matches;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +27,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -37,6 +43,7 @@ private  ImageView goto_reg;
 private  TextView forgotpass;
 private TextView remMe;
 private Button button_login;
+private static final String TAG = "LoginActivity";
 
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://newparq-475c8-default-rtdb.firebaseio.com/");
 
@@ -58,7 +65,31 @@ private Button button_login;
 
           authProfile = FirebaseAuth.getInstance();
 
-          //login user
+          //show hide password
+           ImageView imageViewHide = findViewById(R.id.eye);
+           imageViewHide.setImageResource(R.drawable.ic_hide_pwd);
+           imageViewHide.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View view) {
+                   if (editTextpassword.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+
+                       editTextpassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+
+
+                       //change icon
+                       imageViewHide.setImageResource(R.drawable.ic_hide_pwd);
+
+
+                   } else {
+                       editTextpassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                       imageViewHide.setImageResource(R.drawable.ic_show_pwd);
+                   }
+               }
+              });
+
+
+
+            //login user
         Button button_login =findViewById(R.id.login);
         button_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -166,26 +197,85 @@ private Button button_login;
         });
     }
 
+
+
     private void loginUser(String textEmail, String textPass) {
-        authProfile.signInWithEmailAndPassword(textEmail,textPass).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+        authProfile.signInWithEmailAndPassword(textEmail, textPass).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
+                if (task.isSuccessful()) {
                     Toast.makeText(LoginActivity.this, "You are logged in", Toast.LENGTH_SHORT).show();
-                    final Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
-                    startActivity(intent);
+//                    final Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+//                    startActivity(intent);
 
-                }else {
-                    Toast.makeText(LoginActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                    //get instance of current user
+                    FirebaseUser firebaseUser = authProfile.getCurrentUser();
+
+                    //checking if email is verified before user can access their profile
+                    if (firebaseUser.isEmailVerified()){
+                        Toast.makeText(LoginActivity.this, "You are logged in now", Toast.LENGTH_SHORT).show();
+
+                        //open user profile
+
+                    }else {
+                        firebaseUser.sendEmailVerification();
+                        authProfile.signOut();  //signing the user
+                        showAlertDialog();
+                        
+                    }
+
+                } else {
+                    try {
+                        throw task.getException();
+                    } catch (FirebaseAuthInvalidCredentialsException e) {
+                        editTextemail.setError("User does not exist or is no longer valid.please reqister again");
+                        editTextemail.requestFocus();
+                    } catch (Exception e) {
+                        Log.e(TAG, e.getMessage());
+                        Toast.makeText(LoginActivity.this, e.getMessage(),
+                                Toast.LENGTH_SHORT).show();
+                    }
+
 
                 }
                 progressBar.setVisibility(View.GONE);
 
 
             }
+
         });
     }
+
+    private void showAlertDialog() {
+
+        //set up alert builder
+        AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+        builder.setTitle("Email not verified");
+        builder.setMessage("Please verify your email now.you cannot login without email verification");
+
+        //open email if user clickd continue button
+        builder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_APP_EMAIL);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); //opens mail app
+                startActivity(intent);
+            }
+        });
+
+        //create the alertdialog
+        AlertDialog alertDialog =builder.create();
+
+        //show the alertdialog
+        alertDialog.show();
+
+    }
 }
+
+
+
+
 //
 //    }
 //
