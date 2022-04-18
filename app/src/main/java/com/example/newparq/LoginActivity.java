@@ -187,12 +187,20 @@ private static final String TAG = "LoginActivity";
 
             }
         });
+
+        //activity for resetin password
         TextView forgotpass = findViewById(R.id.fogetpass);
         forgotpass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final Intent i= new Intent(LoginActivity.this,ForgotPassActivity.class);
-                startActivity(i);
+//                final Intent i= new Intent(LoginActivity.this,ForgotPassActivity.class);
+//                startActivity(i);
+                Toast.makeText(LoginActivity.this, "You can reset your password now",
+                        Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LoginActivity.this,ForgotPassActivity.class));
+
+
+
             }
         });
     }
