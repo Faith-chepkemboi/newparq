@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Newparq">
         <activity
+            android:name=".TryActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserProfileActivity"
             android:exported="false" />
         <activity

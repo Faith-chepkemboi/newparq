@@ -5,12 +5,17 @@
       <map>
         <entry key="..\:/Users/Tabkil2019/AndroidStudioProjects/Newparq/app/src/main/res/drawable-v24/person_ico.xml" value="0.1" />
         <entry key="..\:/Users/Tabkil2019/AndroidStudioProjects/Newparq/app/src/main/res/drawable/button.xml" value="0.1" />
+        <entry key="..\:/Users/Tabkil2019/AndroidStudioProjects/Newparq/app/src/main/res/drawable/email.xml" value="0.1" />
+        <entry key="..\:/Users/Tabkil2019/AndroidStudioProjects/Newparq/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/Tabkil2019/AndroidStudioProjects/Newparq/app/src/main/res/drawable/ic_ssplah.xml" value="0.1" />
+        <entry key="..\:/Users/Tabkil2019/AndroidStudioProjects/Newparq/app/src/main/res/drawable/person_ico.xml" value="0.1" />
         <entry key="..\:/Users/Tabkil2019/AndroidStudioProjects/Newparq/app/src/main/res/drawable/shapss.xml" value="0.1" />
         <entry key="..\:/Users/Tabkil2019/AndroidStudioProjects/Newparq/app/src/main/res/layout/activity_forgot_pass.xml" value="0.1" />
+        <entry key="..\:/Users/Tabkil2019/AndroidStudioProjects/Newparq/app/src/main/res/layout/activity_home.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/Tabkil2019/AndroidStudioProjects/Newparq/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/Tabkil2019/AndroidStudioProjects/Newparq/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Tabkil2019/AndroidStudioProjects/Newparq/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="..\:/Users/Tabkil2019/AndroidStudioProjects/Newparq/app/src/main/res/layout/activity_user_profile.xml" value="0.1" />
       </map>
     </option>
   </component>
